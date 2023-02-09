@@ -21,13 +21,37 @@ body {
     letter-spacing: 0.02em;
 }
 
+p, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
 .list {
 list-style: none;
 }
 
+.conteiner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+    }
+
 /* Шапка сайта */
 .header {
-    
+    padding: 24px 0;
+}
+.header-conteiner {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
 }
 
 .logo {
@@ -39,27 +63,41 @@ list-style: none;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     text-decoration: none;
+    margin-right: 76px;
 }
 
 .logo-decor {
-color: var(--primery-brend-color);
+    color: var(--primery-brend-color);
 }
-
-.header-nav .link {
+.header-nav {
+    display: flex;
+    align-items: center
+}
+.header-item:not(:last-child) {
+    margin-right: 40px;
+}
+.header-nav-list {
+    display: flex;
+    align-items: center;
+}
+.header-nav-list .link {
     color: var(--primery-bcg-color);
     font-weight: 500;
     line-height: 1.5;
     text-decoration: none;
 }
 
-.header-nav .link:hover,
-.header-nav .link:focus {
+.header-nav-list .link:hover,
+.header-nav-list .link:focus {
     color: var(--active-btn-color);
 }
-.header-nav .link.current {
+.header-nav-list .link.current {
     color: var(--active-btn-color);
 }
-
+.header-contacts {
+    display: flex;
+    align-items: center;
+}
 .header-contacts .link{
     color: var(--primery-text-color);
     line-height: 1.5;
@@ -70,20 +108,26 @@ color: var(--primery-brend-color);
 .header-contacts .link:focus {
     color: var(--active-btn-color);
 }
-
+.header-contacts-item:not(:last-child) {
+    margin-right: 40px;
+}
 /* Main content */
 /* герой */
 .hero {
     background-color: var(--primery-bcg-color);
-    
+    text-align: center;
 }
 .hero-title {
     color: var(--text-white-color);
     font-size: 56px;
     line-height: 1.07;
-    text-align: center;
+    max-width: 496px;
+    margin-bottom: 48px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .hero-button {
+    padding: 16px 32px;
     color: var(--text-white-color);
     background: var(--primery-brend-color);
     font-family: Roboto, sans-serif;
@@ -93,6 +137,10 @@ color: var(--primery-brend-color);
     line-height: 1.5;
     letter-spacing: 0.04em;
     cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    display: block;
+    margin: auto;
 }
 
 .hero-button:hover,
@@ -101,32 +149,78 @@ color: var(--primery-brend-color);
 }
 /* Функции */
 
-
-.functions-title {
-    color: var(--primery-bcg-color);
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
+.functions {
+    padding-top: 121px;
+    padding-bottom: 122px;
 }
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+.functions-list {
+    display: flex;
+    gap: 24px;
+}
+.functions-item {
+    flex-basis: calc((100% - 72px)/4);
+    max-width: 264px;
+}
+.functions-title {
+    margin-bottom: 8px;}
+
 .functions-text {
     line-height: 1.5;
 }
 
 /* Образці работы */
+.work {
+    padding-top: 0;
+    padding-bottom: 120px;
+}
 .section-title {
     color: var(--primery-bcg-color);
     font-size: 36px;
     line-height: 1.11;
     text-align: center;
     text-transform: capitalize;
+    margin-bottom: 72px;
 }
-
+.working-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+.working-item {
+    flex-basis: calc((100% - 48px)/3);
+}
 /* Команда */
-.section.comand {
+.comand {
     background-color: var(--secondery-bcg-color);
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+.section-title {
+    margin-bottom: 72px;
+}
+.comand-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
 }
 .comand-card {
     background: var(--backgrond-white-color);
+    flex-basis: calc((100% - 72px)/4);
+}
+.comand-img {
+    margin-bottom: 32px;
 }
 .comand-title {
     color: var(--primery-bcg-color);
@@ -134,14 +228,21 @@ color: var(--primery-brend-color);
     font-size: 20px;
     line-height: 1.2;
     text-align: center;
+    margin-bottom: 8px;
 }
 .comand-text {
     line-height: 1.5;
     text-align: center;
+    margin-bottom: 32px;
 }
 /* Футер */
 .footer {
     background-color: var(--primery-bcg-color);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.footer-content {
+    max-width: 264px;
 }
 .footer-logo {
     color: var(--secondery-bcg-color);
@@ -156,20 +257,31 @@ color: var(--primery-brend-color);
 .footer-text {
     color: var(--accenr-text-color);
     line-height: 1.5;
+    margin-top: 16px;
 }
 
 /* Портфолио */
 
 .portfolio-section {
-    background-color: var(--backgrond-white-color);    
-}
-.portfolio-title {
-
+    background-color: var(--backgrond-white-color);
+    padding-top: 96px; 
+    padding-bottom: 120px;
 }
 .portfolio-button-list{
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 72px;
+}
+.portfolio-work-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
 }
 .portfolio-button {
+    padding: 12px 24px;
     color: var(--primery-brend-color);
     background-color: var(--secondery-bcg-color);
     font-family: Roboto, sans-serif;
@@ -179,6 +291,10 @@ color: var(--primery-brend-color);
     letter-spacing: 0.04em;
     text-decoration: none;
     cursor: pointer;
+    border: 1px solid var(--accenr-text-color);
+    border-radius: 4px;
+    display: block;
+    margin: auto;
 }
 .portfolio-button:hover,
 .portfolio-button:focus {
@@ -186,13 +302,17 @@ color: var(--primery-brend-color);
     background-color: var(--active-btn-color);
 }
 .portfolio-work-card {
-    background: var(--backgrond-white-color)
+    background: var(--backgrond-white-color);
+}
+.portfolio-work-img {
+    margin-bottom: 32px;
 }
 .portfolio-work-title {
     color: var(--primery-bcg-color);
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
+    margin-bottom: 8px;
 }
 .portfolio-work-text {
     line-height: 1.5;
