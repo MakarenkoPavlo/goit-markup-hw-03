@@ -10,7 +10,8 @@
     --primery-text-color: #434455;
     --secondery-text-color: #8E8F99;
     --accenr-text-color: #E7E9FC;
-    --text-white-color: #FFFFFF;    
+    --text-white-color: #FFFFFF;  
+    --border-header: #000000;
 }
 
 body {
@@ -31,7 +32,9 @@ ul, ol {
     margin-bottom: 0;
     padding-left: 0;
 }
-
+img {
+    display: block;
+}
 .list {
 list-style: none;
 }
@@ -46,6 +49,8 @@ list-style: none;
 
 /* Шапка сайта */
 .header {
+    border-bottom: 1px solid var(--accenr-text-color);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     padding: 24px 0;
 }
 .header-conteiner {
@@ -147,12 +152,14 @@ list-style: none;
 .hero-button:focus {
     background-color: var(--active-btn-color);
 }
+
+.section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
 /* Функции */
 
-.functions {
-    padding-top: 121px;
-    padding-bottom: 122px;
-}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -174,6 +181,9 @@ list-style: none;
     max-width: 264px;
 }
 .functions-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
     margin-bottom: 8px;}
 
 .functions-text {
@@ -182,8 +192,7 @@ list-style: none;
 
 /* Образці работы */
 .work {
-    padding-top: 0;
-    padding-bottom: 120px;
+    padding-top: 0px;
 }
 .section-title {
     color: var(--primery-bcg-color);
@@ -204,11 +213,6 @@ list-style: none;
 /* Команда */
 .comand {
     background-color: var(--secondery-bcg-color);
-    padding-top: 120px;
-    padding-bottom: 120px;
-}
-.section-title {
-    margin-bottom: 72px;
 }
 .comand-list {
     display: flex;
@@ -219,8 +223,8 @@ list-style: none;
     background: var(--backgrond-white-color);
     flex-basis: calc((100% - 72px)/4);
 }
-.comand-img {
-    margin-bottom: 32px;
+.comand-card-content {
+    padding: 32px 16px;
 }
 .comand-title {
     color: var(--primery-bcg-color);
@@ -233,7 +237,6 @@ list-style: none;
 .comand-text {
     line-height: 1.5;
     text-align: center;
-    margin-bottom: 32px;
 }
 /* Футер */
 .footer {
@@ -274,12 +277,6 @@ list-style: none;
     gap: 24px;
     margin-bottom: 72px;
 }
-.portfolio-work-list {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 24px;
-}
 .portfolio-button {
     padding: 12px 24px;
     color: var(--primery-brend-color);
@@ -301,11 +298,17 @@ list-style: none;
     color: var(--text-white-color);
     background-color: var(--active-btn-color);
 }
+.portfolio-work-list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 48px;
+    column-gap: 24px;
+}
 .portfolio-work-card {
     background: var(--backgrond-white-color);
+    flex-basis: calc((100% - 48px) / 3);
 }
-.portfolio-work-img {
-    margin-bottom: 32px;
+.work-card-tumb {
 }
 .portfolio-work-title {
     color: var(--primery-bcg-color);
@@ -316,4 +319,10 @@ list-style: none;
 }
 .portfolio-work-text {
     line-height: 1.5;
+}
+.work-card-content {
+    padding: 32px 0 32px 16px;
+    border: 1px solid #E7E9FC;
+    border-top: transparent;
+
 }
